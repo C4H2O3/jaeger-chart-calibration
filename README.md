@@ -1,5 +1,7 @@
 # Jaeger Chart Calibration
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23377064.svg)](https://doi.org/10.5281/zenodo.23377064)
+
 Independent research on how to correctly size a Jaeger near-vision reading
 chart when the chart has no real metrological standard, and an empirical
 audit of whether real commercial and public near-vision charts hold their
