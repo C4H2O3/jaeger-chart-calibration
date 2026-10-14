@@ -1,6 +1,21 @@
-**How to Calculate a Jaeger Chart When No Standard Exists**
+# How to Calculate a Jaeger Chart When No Standard Exists
 
-# Introduction
+## Contents
+
+- [Introduction](#introduction)
+- [Existing Research](#existing-research)
+- [The Calculation Method](#the-calculation-method)
+- [Transferring the Method to Cyrillic](#transferring-the-method-to-cyrillic)
+- [Findings on Third-Party Charts](#findings-on-third-party-charts)
+- [Preparing the Rest of the Kit's Tests](#preparing-the-rest-of-the-kits-tests)
+- [Errors and Misconceptions](#errors-and-misconceptions)
+- [Copyright Aspect of the Optotype Text](#copyright-aspect-of-the-optotype-text)
+- [Limitations](#limitations)
+- [Conclusion](#conclusion)
+- [Data and Code](#data-and-code)
+- [References](#references)
+
+## Introduction
 
 I got a request from a client to make a Jaeger chart (a near-vision reading test) for a commercial kit of near vision tests. That requires three numbers for each line – typeface, point size, line spacing. To my request the client replied with an unexpected answer: no exact data existed. Instead of a specification, I got from him a few competitor references as examples.
 
@@ -28,7 +43,7 @@ Methodologically, I relied on deriving the formula from optics (existing charts 
 
 I managed to show the absence of a metrological standard in a universally used method, to derive and describe a reproducible way to replace it, and to measure and compare the calibration of several independent real near-vision products in a comparable way, including an assessment of which of them actually hold their stated scale and which don't.
 
-# Existing Research
+## Existing Research
 
 Even though the Jaeger chart has no unified standard, there is methodological literature around this problem. The foundational work is F. W. Law's "Standardization of Reading Types" (British Journal of Ophthalmology, 1951), which justifies a serif typeface for reading charts and the idea of standardization through the physical size of the sign. N-notation is built on it (a practical semi-standard for near vision): Times New Roman typeface, a fixed series of point sizes (5, 6, 8, 10, 12, 14, 18, 24, 36, 48 pt).
 
@@ -36,7 +51,7 @@ M-notation also exists separately – a physically defined, reproducible angular
 
 Separately, Russian-language ophthalmology has its own, independent tradition of measuring near visual acuity – a standard working distance of 33 cm (not 40, as with Jaeger and N-notation), with charts based on the Golovin-Sivtsev typeface (the classic optotype of Russian ophthalmology for distance vision). This convention was not tested instrumentally in the present work. A different working distance requires a separate derivation of the formula and remains an explicitly flagged direction for future checking, not part of the measurements already done.
 
-# The Calculation Method
+## The Calculation Method
 
 The basic principle isn't new: visual acuity (or "VA") of 1.0 corresponds to a sign that subtends 5 arcminutes at the working distance. For a working distance of 40 cm, this directly gives the reference value – the height of a lowercase letter (x-height) at VA = 1.0:
 
@@ -75,7 +90,7 @@ Formulas: `x-height = 0.582/VA`, `point size = 3.68/VA`, `cap-height = 0.860/VA`
 
 A counterintuitive but checkable result: VA 1.0 at 40 cm needs a sub-millimeter letter (x-height 0.582 mm; cap-height 0.86 mm). Independent verification: a standard 20/20 optotype at a 6 m distance ≈ 8.7 mm; scaled to 40 cm – 8.7 × (0.4/6) = 0.58 mm, which matches the derived formula.
 
-# Transferring the Method to Cyrillic
+## Transferring the Method to Cyrillic
 
 Transferring the size to Cyrillic and printing the chart would have been too easy. But since no strict Cyrillic analog of the Latin Sloan optotype exists (Sloan is a standard Latin set of optotype letters – C, D, H, K, N, O, R, S, V, Z – which is used in modern distance acuity charts such as ETDRS; the letter is inscribed in a 5×5 square, stroke is 1/5 of the side), I had to dig into the theory again. The Russian standard is the Golovin-Sivtsev typeface, seven letters: Б, И, К, М, Н, Ш, Ы (Cyrillic letters, construction equivalent to B, I, K, M, N, Sh, Y). Construction is the same as Sloan: the letter is inscribed in a 5×5 square, stroke thickness is 1/5 of the side. The Golovin-Sivtsev chart was historically meant for distance vision (5 m), but since the optotype is defined by angular size and not the distance, it's legitimate to use it for near vision too, by recalculating the height for a 40 cm working distance. This gives the following values:
 
@@ -98,7 +113,7 @@ Formula: `point size = 2.06/VA` (under the metric "letter = 0.80·em"). Check: t
 
 The duochrome test and the Jaeger chart turn out to share one metric logic – a common invariant of 0.582 mm by letter height, despite different optotypes and different typeface origins. The whole kit is tied to one working distance.
 
-# Findings on Third-Party Charts
+## Findings on Third-Party Charts
 
 Once I had my own tables, I decided to apply the method "in reverse" and measure actual letter sizes in publicly available charts unrelated to my project, to verify whether the invariant holds. I managed to verify seven independent sources: commercial products, publicly available materials, and one professional academic source.
 
@@ -134,7 +149,7 @@ Table 3. Summary table of sources
 
 Five of the seven sources don't hold their own stated scale, distorting size at the edges of the chart. Both sources that passed the check come from a serious professional context – a licensed clinical brand with a named developer, and an academic university ophthalmology department. All five sources with a discrepancy come from the general public web, without clear clinical verification. The sample is far too small for any statistical conclusions or generalizations.
 
-# Preparing the Rest of the Kit's Tests
+## Preparing the Rest of the Kit's Tests
 
 The Jaeger chart and the duochrome test aren't the only elements of the kit, and it would be a direct repeat of an already-discussed mistake to automatically extend the same angular principle to the rest of the tests. The parameters of these other tests weren't derived by the same method. They're taken from existing specialized sources. What matters here isn't where the numbers come from, but where the invariant stops applying. The tests fall into three groups by the principle that sets their size.
 
@@ -162,7 +177,7 @@ Table 4. Summary table for Group B
 
 A separate note on the Amsler grid (not included in the final kit): its standard working distance is 30 cm, a 5 mm cell corresponds to 1°. For a 40 cm working distance, keeping the same 1°-per-cell angular step, the cell should be 7 mm, not 5. This is an example of the fact that not all tests, even within one kit, "live" at the same working distance.
 
-# Errors and Misconceptions
+## Errors and Misconceptions
 
 In the course of this work, I identified the following common errors:
 
@@ -174,7 +189,7 @@ In the course of this work, I identified the following common errors:
 6. The acuity invariant only applies to Group A charts. For Group B targets, what matters is the functional element; for Group C phoria tests, it's the rigid tie to distance.
 7. When copying someone else's chart with the same nominal point sizes but in a different typeface, the letters in practice come out roughly 7% smaller or larger than stated. That gives neither an exact copy nor a correct calculation.
 
-# Copyright Aspect of the Optotype Text
+## Copyright Aspect of the Optotype Text
 
 The reading text in the Jaeger chart isn't a random set of words, but a meaningful excerpt. I chose a fragment of "Through the Looking-Glass" by Lewis Carroll (1871, public domain). The canonical Russian translation by N. Demurova is under copyright (the translator died in 2021; protection lasts until approximately 2091) and couldn't be used.
 
@@ -182,7 +197,7 @@ To resolve this, I translated the fragment independently from the original, not 
 
 Methodologically this points to a more general principle: an optotype chart can be set in any meaningful public-domain text, or an original one. The content of the text doesn't affect the measurement of visual acuity – only the size of the sign matters.
 
-# Limitations
+## Limitations
 
 **Absolute sizes taken from raster images and scans are only reliable in relative terms.** Where a source has no text layer with an explicitly stated page scale, measurements rely on the ratio test (a ratio of sizes), not absolute millimeters. For several sources checked in this work, this is noted separately.
 
@@ -194,7 +209,7 @@ Methodologically this points to a more general principle: an optotype chart can 
 
 **The sample of third-party sources isn't sufficient for representative statistics.** Although the seven sources showed that professional sources hold the scale better than the general public web, this isn't enough to call it an established pattern.
 
-# Conclusion
+## Conclusion
 
 1. The Jaeger chart has no metrological standard and never has had one. This is a documented historical fact (Eduard Jaeger, 1854, the typefaces of one specific Viennese print shop).
 2. The correct optotype size is derived from elementary angular optics and checked with a ruler on any finished printout. The invariant "sign height × acuity = const" holds constant across the whole scale.
@@ -204,13 +219,13 @@ Methodologically this points to a more general principle: an optotype chart can 
 6. Respecting copyright matters even for a detail as small as the reading text in a chart.
 7. The correctness of my clinical interpretation was checked and confirmed without objections by the client's ophthalmologist.
 
-# Data and Code
+## Data and Code
 
 **Published:** the derived formulas and calculation tables (the "Calculation Method" and "Transferring the Method to Cyrillic" sections of this paper, in a generalized form not tied to any specific commercial product), and the code used to check the seven third-party sources – `measure_allaboutvision.py`, `measure_visionexpert.py`, `measure_lea_numbers.py`, `measure_arizona_reading_near.py`. Each script reproduces the figures given in the text when run on the source file of the corresponding source.
 
 **Not published:** materials specific to the commercial test kit (layout, branded files, client-specific instructions). This work didn't use any patient data.
 
-# References
+## References
 
 1. Law, F.W. (1951). Standardization of Reading Types. *British Journal of Ophthalmology*.
 2. Precision Vision. The Jaeger Notation Debate (materials on the lack of a Jaeger-notation standard; needs an exact citation confirmed before publication).
